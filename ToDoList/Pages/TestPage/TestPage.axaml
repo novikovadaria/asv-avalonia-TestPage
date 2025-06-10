@@ -1,0 +1,74 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ToDoList.Pages.TestPage"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
+             x:Class="ToDoList.Pages.TestPage.TestPage"
+             x:DataType="local:TestPageViewModel">
+
+	<Border Padding="30" CornerRadius="10" >
+		<StackPanel Spacing="15">
+
+			<TextBlock Text="{Binding Title}"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="0 0 0 20" />
+
+			<TextBox Text="{Binding InputText.ViewValue.Value, Mode=TwoWay}"
+                     Watermark="Type something..."
+                     FontSize="16"
+                     Padding="10"
+                     BorderBrush="#D1D5DB"
+                     CornerRadius="6"/>
+
+			<TextBlock Text="{Binding OutputText.Value}"
+                       FontSize="20"
+                       Margin="0 10 0 20" />
+
+			<StackPanel Orientation="Horizontal" Spacing="15">
+				<Button Content="Show Text"
+                        Command="{Binding ShowTextCommand}"
+                        FontWeight="SemiBold"
+                        Padding="10 6"
+                        CornerRadius="6"
+                        MinWidth="100" />
+				<Button Content="Clear"
+                        Command="{Binding ClearTextCommand}"
+                        FontWeight="SemiBold"
+                        Padding="10 6"
+                        CornerRadius="6"
+                        MinWidth="100" />
+			</StackPanel>
+
+			<Separator Margin="0 25" />
+
+			<TextBlock Text="Historical Test:"
+                       FontWeight="Bold"
+                       FontSize="18"
+                       Margin="0 0 0 10" />
+
+			<TextBox Text="{Binding StringProp.ViewValue.Value}"
+                     Watermark="Historical Value..."
+                     FontSize="16"
+                     Padding="10"
+                     CornerRadius="6" />
+
+			<Button Content="Clear"
+                    Command="{Binding Clear}"
+                    HorizontalAlignment="Left"
+                    FontWeight="SemiBold"
+                    Padding="10 6"
+                    CornerRadius="6"
+                    Margin="0 15 0 0"
+                    MinWidth="100" />
+
+		</StackPanel>
+	</Border>
+
+</UserControl>
+
+
+
